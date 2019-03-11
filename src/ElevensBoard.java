@@ -83,10 +83,11 @@ public class ElevensBoard extends Board {
 	private List<Integer> findPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE CHANGED INTO findPairSum11 IN ACTIVITY 11 *** */
 		List<Integer> indexes = new ArrayList<Integer>();
-		for (int sk1 = 0; sk1 < selectedCards.size(); sk1++) {
-			int k1 = selectedCards.get(sk1).intValue();
-			for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
-				int k2 = selectedCards.get(sk2).intValue();
+		for (Integer sk1: selectedCards) {
+			int k1 = sk1.intValue();
+			//int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++
+			for (Integer sk2: selectedCards) {
+				int k2 = sk2.intValue();
 				if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 11) {
 					indexes.add(sk1);
 					indexes.add(sk2);
