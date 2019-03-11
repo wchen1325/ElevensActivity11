@@ -119,7 +119,7 @@ public abstract class Board {
 	public List<Integer> cardIndexes() {
 		List<Integer> selected = new ArrayList<Integer>();
 		for (int k = 0; k < cards.length; k++) {
-			if (cards[k] != null) {
+			if (cards[k] != null) { //Problem here
 				selected.add(new Integer(k));
 			}
 		}

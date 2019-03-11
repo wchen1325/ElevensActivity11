@@ -49,9 +49,9 @@ public class ElevensBoard extends Board {
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE MODIFIED IN ACTIVITY 11 *** */
 		if (selectedCards.size() == 2) {
-			return findPairSum11(selectedCards).size() >0;
+			return findPairSum11(selectedCards).size()==2;
 		} else if (selectedCards.size() == 3) {
-			return findJQK(selectedCards).size()>0;
+			return findJQK(selectedCards).size()==3;
 		} else {
 			return false;
 		}
@@ -69,7 +69,7 @@ public class ElevensBoard extends Board {
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE MODIFIED IN ACTIVITY 11 *** */
 		List<Integer> cIndexes = cardIndexes();
-		return findPairSum11(cIndexes).size() >0 || findJQK(cIndexes).size()>0;
+		return findPairSum11(cIndexes).size() ==2 || findJQK(cIndexes).size()==3;
 	}
 
 	/**
@@ -147,7 +147,7 @@ public class ElevensBoard extends Board {
 	private boolean playPairSum11IfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
 		List<Integer> cIndexes = findPairSum11(cardIndexes());
-		if(cIndexes.size() >0){
+		if(cIndexes.size() == 2){
 			replaceSelectedCards(cIndexes);
 			return true; // REPLACE !
 		}
@@ -162,7 +162,7 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean playJQKIfPossible() {
 		List<Integer> cIndexes = findJQK(cardIndexes());
-		if(cIndexes.size() >0){
+		if(cIndexes.size() == 3){
 			replaceSelectedCards(cIndexes);
 			return true; // REPLACE !
 		}
